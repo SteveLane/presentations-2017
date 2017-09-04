@@ -183,3 +183,18 @@ div.my-footer span {
     right: 0px;
     width: 215px;
 }
+
+/* Simple table css */
+/* fill width */
+table {
+    width: 100%;
+    text-align: right;
+}
+/* highlight header */
+th {
+    background-color: #2B4450;
+    color: #F2F2F2;
+}
+/* alternate row colours */
+tr:nth-child(odd) {background-color: #D3D3D3}
+tr:nth-child(even) {background-color: #A9A9A9}
