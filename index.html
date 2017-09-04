@@ -63,16 +63,127 @@ class: center, middle
 
 ---
 class: inverse, center, middle
-background-image: 
+background-image: url(img/medfly.jpg)
+background-size: 80%
+background-position: center middle
 
 # Enough about netball!
 
 ## What about biosecurity?
 
+.footnote[
+
+&lt;a rel="license" href="https://creativecommons.org/licenses/by/2.0/"&gt;&lt;img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/2.0/80x15.png" /&gt;&lt;/a&gt; [Katja Schulz &amp;mdash; Washington, D.C., USA](https://www.flickr.com/photos/treegrow/8543655858/)
+
+]
+
 ---
 class: top, left
 
-# Janie
+# Models
+
+- We all use models
+- Models demand assumptions
+- Assumptions should be checked
+- Deviations should be accommodated
+
+---
+class: top, left
+
+# Statistical models
+
+- Statistical models help account for:
+    - The assumptions we make;
+    - The variations we see;
+    - The deviations we accommodate.
+
+Not everyone uses statistical models
+
+**But they should!**  .bigr[🤔]
+
+`Data = Deterministic + Stochastic`
+
+---
+class: top, left
+
+# 🎲 Dice rolling
+
+Suppose you have a die, and every time you roll it you make a note of whether the value was less than or equal to 2 (L), or greater than 2 (G).
+
+A series of rolls may look like the following:
+
+.center[
+L  G  G  G  L  G  L  G  G  G
+]
+
+--
+
+### Let's tell a story
+
+We can motivate our observations, by telling a story.
+
+---
+
+# 🎲 A dice rolling story
+
+A simple story for this example tells us how the observations come about:
+
+- we roll the die `\(n\)` times
+- the probability of rolling less than or equal to 2, is `\(p\)`
+- a single roll of the die results in `\(\{1, 2\}\)` with probability `\(p\)`, or `\(\{3, 4, 5, 6\}\)` with probability `\(1-p\)`
+- every roll of the die is independent from all other rolls
+
+### We then encode our story in a formal probabilistic model
+
+---
+name: dice-model
+
+# 🎲 A dice rolling model
+
+Let's translate our story into a model. First, let `\(C\)` be the number of times the die shows less than or equal to 2. Then, if
+
+1. we roll the die `\(n\)` times;
+2. the probability of rolling a 2 or less is a constant, `\(p\)`; and
+3. each of the rolls is independent
+
+we may assume that `\(C\)` has a Binomial distribution:
+
+`$$\begin{align*}
+C &amp; \sim \text{Binomial}(n, p)
+\end{align*}$$`
+
+--
+
+&lt;hr&gt;
+.center[
+L  G  G  G  L  G  L  G  G  G
+]
+In our previous example, `\(C=3\)`.
+
+---
+
+# The Binomial (more generally)
+
+.center[
+
+More generally, if we find ourselves in situation where we have two outcomes in our story (and the [previous assumptions](#dice-model) hold), we can make use of the Binomial distribution.
+
+]
+
+### Examples
+
+- presence/absence
+    - e.g. a noxious weed
+- survival
+    - e.g. testing of new biological controls for cane toads
+
+---
+
+# new math test (and again)
+
+`$$\begin{align*}
+C &amp; \sim \text{Binomial}(n, p)
+\end{align*}$$`
 
 &lt;p&gt;
   &lt;br&gt;&lt;br&gt;&lt;br&gt;
