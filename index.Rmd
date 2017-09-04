@@ -230,7 +230,15 @@ background-position: center middle
 ]
 
 ---
-class: left, middle
+class: top, left
+
+# Acknowledgements
+
+- [A/Prof. Andrew Robinson](http://cebra.unimelb.edu.au/people/chief-investigators)
+    - for bootstrapping my slides
+
+---
+class: top, left
 
 # Colophon
 
@@ -240,9 +248,6 @@ class: left, middle
 
 <i class="fa fa-user fa-2x" aria-hidden="true"></i>.bigr[[https://stevelane.github.io/](https://stevelane.github.io/)]
 
-
-<p>
-  <br><br><br>
-  All views presented within are the author's only, and do not necessarily represent the views of CEBRA.
-  <br><br>
-</p>
+.footnote[
+All views presented within are the author's only, and do not necessarily represent the views of CEBRA.
+]
