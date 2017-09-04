@@ -1,0 +1,85 @@
+---
+title: "Statistical Modelling for Biosecurity"
+author: "Stephen E. Lane"
+output:
+  xaringan::moon_reader:
+    includes:
+      in_header: header.html
+      after_body: footer.html
+    css: "css/style.css"
+    lib_dir: libs
+    nature:
+      highlightStyle: dracula
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+layout: true
+class: left, top
+background-image: url(img/CEBRALogo-01.svg)
+background-size: 215px
+background-position: right top
+
+---
+class: center, middle
+background-image: 
+
+![](img/CEBRALogo-01.svg)
+
+.bigr[[http://cebra.unimelb.edu.au/](http://cebra.unimelb.edu.au/)]
+
+<!-- Time-stamp: <2017-09-04 07:25:42 (slane)> -->
+
+---
+class: inverse, center, middle
+background-image: 
+
+# Here we go!
+
+```{r,knitr-setup,echo=FALSE,warning=FALSE,message=FALSE,cache=FALSE,results="hide"}
+library(dplyr)
+knitr::opts_chunk$set(cache = FALSE, error = FALSE, warning = FALSE,
+                      message = FALSE, echo = TRUE)
+options(digits = 2)
+
+```
+
+---
+class: center, middle
+
+![](img/abilities-vixens-lightning.png)
+
+.logo-overlay[![](img/CEBRALogo-01.svg)]
+
+---
+class: center, middle
+
+![](img/score-diff-all.png)
+
+.logo-overlay[![](img/CEBRALogo-01.svg)]
+
+---
+class: center, middle
+
+![](img/finals-pred-diffs.png)
+
+.logo-overlay[![](img/CEBRALogo-01.svg)]
+
+---
+class: inverse, center, middle
+background-image: 
+
+# Enough about netball!
+
+## What about biosecurity?
+
+---
+class: top, left
+
+# Janie
+
+<p>
+  <br><br><br>
+  All views presented within are the author's only, and do not necessarily represent the views of CEBRA.
+  <br><br>
+</p>
