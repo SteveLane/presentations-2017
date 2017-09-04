@@ -36,7 +36,7 @@ a, a > code {
   position: absolute;
   bottom: 3em;
   padding-right: 4em;
-  font-size: 90%;
+  font-size: 75%;
 }
 
 /* Code fonts/colours */
@@ -45,7 +45,7 @@ a, a > code {
 
 /* Inverse code highlighting for quoting environment */
 .remark-code, .remark-inline-code, .code-quote{
-    color: #fff;
+    color: #2B4450;;
 }   
 
 /* Colours for inverse class */
@@ -122,13 +122,16 @@ ul:not(:last-child) {
 
 /* Change background colour of inline code */
 code {
-    background-color: #282A36;
+    background-color: #f2f2f2;
 }
 
 /* Change size of code */
 .remark-code {
     font-size: 25px;
 }
+
+/* Change mathjax font size (quick and dirty) */
+.mjx-chtml{ font-size: 100% !important; }
 
 /* Logo for each slide */
 /* Header/Footer stuff */
@@ -173,7 +176,7 @@ div.my-footer span {
     }
 }
 
-/* For full screen images */
+/* For full screen images, still have the logo, but make it overlay */
 .logo-overlay {
     position: absolute;
     top: 0px;
