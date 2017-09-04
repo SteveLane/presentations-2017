@@ -45,7 +45,7 @@ a, a > code {
 
 /* Inverse code highlighting for quoting environment */
 .remark-code, .remark-inline-code, .code-quote{
-    color: #2B4450;;
+    color: #2B4450;
 }   
 
 /* Colours for inverse class */
@@ -91,17 +91,17 @@ img, video, iframe {
 
 /* Block quotes (for exercises) */
 blockquote {
-    background-color: #999999;
-    color: #333333;
+    background-color: #BEBEBE;
+    color: #2B4450;
     margin-top: 1.0em;
     margin-bottom: 1.0em;
     margin-left: 0.5em;
     margin-right: 0.5em;
     padding-left: 1.0em;
     padding-right: 1.0em;
-    box-shadow: 0 0 1em #F78536;
-    -webkit-box-shadow: 0 0 1em #F78536;
-    -moz-box-shadow: 0 0 1em #F78536;
+    box-shadow: 0 0 1em rgb(10.195923%,23.921204%,41.960144%);
+    -webkit-box-shadow: 0 0 1em rgb(10.195923%,23.921204%,41.960144%);
+    -moz-box-shadow: 0 0 1em rgb(10.195923%,23.921204%,41.960144%);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     overflow: auto;
