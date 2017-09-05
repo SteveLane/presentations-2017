@@ -226,16 +226,169 @@ background-position: center middle
 | .left[&nbsp;&nbsp;Horses] | 440 | 390 | 340 |
 
 .footnote[
+Source: Department of Agriculture and Water Resources, [2015/16 Annual Report](http://www.agriculture.gov.au/about/reporting/annualreport/2015-16)</br>
 <sup>&dagger;</sup>Post-entry quarantine stations
 ]
 
 ---
-class: top, left
 
-# Acknowledgements
+# What are our defences?
 
-- [A/Prof. Andrew Robinson](http://cebra.unimelb.edu.au/people/chief-investigators)
-    - for bootstrapping my slides
+- Not importing anything `r emo::ji("thinking")`
+- Not allowing any passenger movement `r emo::ji("thinking")`
+- Sourcing from pest free areas
+- Treatments prior to export
+- Inspection (possibly at random, but often mandatory)
+- Post-entry quarantine
+
+---
+
+# Inspection
+
+So far the focus has been national; but there are equally strict quarantine measures at our state borders. For example, there are [permanent quarantine stations](http://www.pir.sa.gov.au/biosecurity/fruit_fly/bringing_fruit_and_vegetables_into_south_australia) as you head into South Australia.
+
+On roads entering South Australia without permanent quarantine stations, there are disposal bins; these are likewise monitored, with random inspections occurring post-bin location.
+
+---
+
+# Hypothetical: A new inspection method
+
+Let's suppose you and your team devise a new biosecurity awareness campaign for travellers entering South Australia. To test the campaign, you perform random inspections of vehicles after they pass the disposal bins. Historically, the proportion of vehicles carrying fruit<sup>&dagger;</sup> is 5%; you stop 100 vehicles, and find none of them carried fruit!
+
+.footnote[
+<sup>&dagger;</sup>Or biosecurity risk material more generally.
+]
+
+### How do you interpret this?
+
+--
+
+- think about assumptions
+
+--
+
+- assume Binomial, $F \sim \text{Binomial}(100, 0.05)$
+
+--
+
+- calculate: $\Pr(F=0)=`r round(dbinom(0, 100, 0.05)*100, 1)`\%$
+
+---
+
+# Imports of fresh garlic
+
+.pull-left[
+
+In the previous example, we could inspect all the vehicles.
+
+.center[<i class="fa fa-ban fa-5x" aria-hidden="true" style="color:red;"></i>]
+
+We can't inspect all garlic in all consignments!
+
+]
+
+.pull-right[
+
+![](img/0660020-PPT.jpg)
+
+.footnote[
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/us/80x15.png" /></a>Central Science Laboratory, Harpenden , British Crown, [bugwood.org](https://bugwood.org).
+]
+
+]
+
+---
+
+# How much effort should we make?
+
+We should agree on certain measures, for example the [International Standards for Phytosanitary Measures](https://www.ippc.int/en/core-activities/standards-setting/ispms/).
+
+### *Zero risk is unattainable and undesirable*
+
+Beale, R., Fairbrother, J., Inglis, A., & Trebeck, D. (2008). *One Biosecurity: a Working Partnership*. Commonwealth of Australia.
+
+### Example
+
+We agree to inspect enough garlic, such that the probability of detecting contamination within a consignment is sufficiently high. For example, a 95% probability of detection, if the contamination rate is 0.5% or higher.
+
+---
+
+# An inspection problem
+
+Suppose you select 200 bulbs of garlic from a consignment; after a thorough inspection, you find zero of the bulbs are contaminated.
+
+How confident are you that the consignment does not contain any contaminated garlic? (I.e. in the bulbs you *didn't* inspect).
+
+> Another way of thinking about this is to assume the consignment contains some garlic bulbs that are contaminated. What is the probability that our sample of 200, contains 1 or more of the contaminated bulbs? Note: we want this to be high!
+
+---
+
+# An inspection problem, cont'd
+
+- assume the Binomial model again, $X \sim \text{Binomial}(200, 0.5\%)$
+    - and further, that the consignment contains contaminated bulbs
+- calculate $\Pr(X=0)$
+
+```{r,echo=FALSE}
+p <- dbinom(0, 200, 0.005)
+```
+
+The probability that our sample contains 1 or more of the contaminated bulbs is:
+
+$$\begin{equation}
+\Pr(X \geq 0) = 1 - \Pr(X = 0) = 1 - `r round(p, 2)`
+\end{equation}$$
+
+`r emo::ji("thinking")`, $`r round((1 - p)*100, 1)`\%$ that's not very confident&hellip;
+
+---
+
+# An inspection problem, cont'd
+
+What we really want, is to figure out *how many* bulbs of garlic to inspect, to ensure that we have a high probability of detecting contamination.
+
+We need to turn our previous thinking on its head: assume $X=0$ and $p=0.5\%$. Then how big does $n$ have to be to ensure $\Pr(X\geq0|n,p=0.5\%)$ is *large* enough?
+
+### Example
+
+--
+
+Let's say we want the probability of detecting contamination to be greater than 95%; then assuming a Binomial model with $p=0.5\%$,
+
+<p style="text-align:center">\(n\) needs to be <span style="color:#f92672">greater than `r ceiling(log(1 - 0.95) / log(1 - 0.5/100))`</span>!</p>
+
+---
+class: inverse, center, middle
+background-image: url(img/tenor.gif)
+background-size: 60%
+background-position: center middle
+
+---
+
+# Non-constant $p$
+
+How do we deal with non-constant $p$?
+
+For example, which consignments should we target on the fruit pathway? And even more so, which suppliers within particular tariffs?
+
+Modelling is your friend `r emo::ji("smile")`! [*When Does Poor Governance Presage Biosecurity Risk.*](http://onlinelibrary.wiley.com/doi/10.1111/risa.12873/abstract)
+
+See also: [*Invasive Species: Risk Assessment and Management*](https://www.amazon.com/Invasive-Species-Risk-Assessment-Management/dp/0521146747)
+
+.footnote[
+
+Shameless self-plug: Lane, S. E., Arthur, A. D., Aston, C., Zhao, S., & Robinson, A. P. (2017). When Does Poor Governance Presage Biosecurity Risk? *Risk Analysis: An Official Publication of the Society for Risk Analysis*.
+
+Robinson, A. P., Walshe, T., Burgman, M. A., & Nunn, M. (2017). *Invasive Species: Risk Assessment and Management*. Cambridge University Press.
+
+]
+
+---
+class: center, middle
+
+![](img/supps-1.png)
+
+.logo-overlay[![](img/CEBRALogo-01.svg)]
 
 ---
 class: top, left
@@ -247,6 +400,11 @@ class: top, left
 <i class="fa fa-github fa-2x" aria-hidden="true"></i>.bigr[[SteveLane](https://github.com/SteveLane) ([these slides](#))]
 
 <i class="fa fa-user fa-2x" aria-hidden="true"></i>.bigr[[https://stevelane.github.io/](https://stevelane.github.io/)]
+
+</br>
+
+- Thanks to [A/Prof. Andrew Robinson](http://cebra.unimelb.edu.au/people/chief-investigators)
+    - for bootstrapping my slides
 
 .footnote[
 All views presented within are the author's only, and do not necessarily represent the views of CEBRA.
