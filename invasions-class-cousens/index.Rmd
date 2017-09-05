@@ -4,10 +4,9 @@ author: "Stephen E. Lane"
 output:
   xaringan::moon_reader:
     includes:
-      in_header: header.html
-      after_body: footer.html
-    css: "css/style.css"
-    lib_dir: libs
+      in_header: ../assets/partials/header.html
+      after_body: ../assets/partials/footer.html
+    css: ../assets/css/grey.css
     nature:
       highlightStyle: dracula
       highlightLines: true
