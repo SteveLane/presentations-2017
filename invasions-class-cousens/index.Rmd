@@ -396,7 +396,7 @@ class: top, left
 
 <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>.bigr[[@stephenelane](https://twitter.com/stephenelane)]
 
-<i class="fa fa-github fa-2x" aria-hidden="true"></i>.bigr[[SteveLane](https://github.com/SteveLane) ([these slides](#))]
+<i class="fa fa-github fa-2x" aria-hidden="true"></i>.bigr[[SteveLane](https://github.com/SteveLane) ([these slides](https://github.com/SteveLane/presentations-2017/tree/master/invasions-class-cousens))]
 
 <i class="fa fa-user fa-2x" aria-hidden="true"></i>.bigr[[https://stevelane.github.io/](https://stevelane.github.io/)]
 
